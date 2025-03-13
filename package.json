@@ -11,6 +11,6 @@
     "parse-server": "^4.10.14"
   },
   "engines": {
-    "node": ">=14"
+    "node": "14"
   }
 }
