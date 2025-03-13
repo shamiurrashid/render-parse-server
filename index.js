@@ -9,7 +9,9 @@ const api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse'
 });
 
-app.use('/parse', api.app);
+// Serve the Parse API on the /parse URL prefix
+const mountPoint = process.env.PARSE_MOUNT || '/parse';
+app.use(mountPoint, api.app);
 
 app.listen(1337, () => {
   console.log('Parse Server running on port 1337');
