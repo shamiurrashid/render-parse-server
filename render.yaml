@@ -1,0 +1,17 @@
+services:
+  - name: parse-server
+    type: web
+    env: docker
+    region: sin
+    plan: free
+    image: docker.io/node:16-slim # Base image with Node.js
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URI
+        value: mongodb://user:password@host:port/database  # Replace
+      - key: APP_ID
+        value: myAppId
+      - key: MASTER_KEY
+        value: myMasterKey
+      - key: SERVER_URL
+        value: https://your-render-url.onrender.com/parse  # Replace
